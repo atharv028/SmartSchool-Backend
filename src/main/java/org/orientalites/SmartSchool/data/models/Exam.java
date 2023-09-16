@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 import java.sql.Date;
 import java.sql.Time;
 
+enum ExamType {
+    Quiz,Assignment,Exam
+}
+
 @Data
 @NoArgsConstructor
 @Entity(name = "exam")
@@ -14,7 +18,7 @@ public class Exam {
     @jakarta.persistence.Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private int id;
-    private String type;
+    private ExamType type;
     private String topic;
     @Temporal(TemporalType.DATE)
     private Date deadline;
