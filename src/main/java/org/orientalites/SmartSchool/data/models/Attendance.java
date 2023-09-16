@@ -1,10 +1,10 @@
 package org.orientalites.SmartSchool.data.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -14,7 +14,9 @@ public class Attendance {
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private int id;
     @OneToOne()
+    @JoinColumn(name = "student", referencedColumnName = "id")
     private Student student;
-    private String date;
+    @Temporal(TemporalType.DATE)
+    private Date date;
     private boolean present;
 }

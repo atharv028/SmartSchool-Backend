@@ -12,8 +12,6 @@ public class Department {
     @jakarta.persistence.Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private int id;
-
-    private String collegeName;
     private String name;
     private String location;
     @ManyToOne(fetch = FetchType.LAZY)

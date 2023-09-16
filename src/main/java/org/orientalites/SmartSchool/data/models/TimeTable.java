@@ -1,11 +1,10 @@
 package org.orientalites.SmartSchool.data.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -18,7 +17,12 @@ public class TimeTable {
     @OneToOne()
     @JoinColumn(name = "class", referencedColumnName = "id")
     private Class classId;
-    private String date;
-    private int subjectId;
-    private int teacherId;
+    @Temporal(TemporalType.DATE)
+    private Date date;
+    @OneToOne()
+    @JoinColumn(name = "subject", referencedColumnName = "id")
+    private Subject subjectId;
+    @OneToOne()
+    @JoinColumn(name = "teacher", referencedColumnName = "id")
+    private Teacher teacherId;
 }

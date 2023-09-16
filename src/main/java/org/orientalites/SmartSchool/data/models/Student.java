@@ -1,9 +1,10 @@
 package org.orientalites.SmartSchool.data.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -16,8 +17,11 @@ public class Student {
     private String email;
     private String password;
     private String name;
-    private int classId;
-    private String dob;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "class", referencedColumnName = "id")
+    private Class classId;
+    @Temporal(TemporalType.DATE)
+    private Date dob;
     private String address;
     private String phone;
 }

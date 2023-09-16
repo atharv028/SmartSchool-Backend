@@ -2,7 +2,10 @@ package org.orientalites.SmartSchool.data.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.Data;
+import java.util.Date;
 import lombok.NoArgsConstructor;
 
 @Data
@@ -17,5 +20,6 @@ public class Teacher {
     private String qualifications;
     private String address;
     private String phone;
-    private String joining;
+    @Temporal(TemporalType.DATE)
+    private Date joining;
 }
