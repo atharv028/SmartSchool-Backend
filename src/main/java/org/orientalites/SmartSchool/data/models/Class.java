@@ -1,11 +1,9 @@
 package org.orientalites.SmartSchool.data.models;
 
 import jakarta.persistence.*;
+import java.util.Set;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Set;
-
 
 @Data
 @NoArgsConstructor

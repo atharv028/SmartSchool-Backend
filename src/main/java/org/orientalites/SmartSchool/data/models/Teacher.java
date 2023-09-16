@@ -4,8 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-import lombok.Data;
 import java.util.Date;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
@@ -20,6 +20,7 @@ public class Teacher {
     private String qualifications;
     private String address;
     private String phone;
+
     @Temporal(TemporalType.DATE)
     private Date joining;
 }

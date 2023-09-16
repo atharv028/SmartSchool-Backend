@@ -12,6 +12,7 @@ public class Subject {
     @jakarta.persistence.Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private int id;
+
     private String name;
     private String description;
 }

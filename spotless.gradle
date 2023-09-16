@@ -1,0 +1,10 @@
+apply plugin: 'com.diffplug.spotless'
+
+spotless {
+    java {
+        target('src/**/*.java')
+        googleJavaFormat().aosp()
+        trimTrailingWhitespace()
+        indentWithSpaces()
+    }
+}

@@ -14,11 +14,14 @@ public class Result {
     @jakarta.persistence.Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private int id;
+
     @OneToOne
-    @JoinColumn(name = "exam_id",referencedColumnName = "id")
+    @JoinColumn(name = "exam_id", referencedColumnName = "id")
     private Exam exam;
+
     @OneToOne
-    @JoinColumn(name = "student_id",referencedColumnName = "id")
+    @JoinColumn(name = "student_id", referencedColumnName = "id")
     private Student student;
+
     private int marks;
 }

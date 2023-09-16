@@ -9,13 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SmartSchoolApplication {
 
-	@GetMapping("/")
-	public String hello() {
-		return "Hello World";
-	}
+    @GetMapping("/")
+    public String hello() {
+        return "Hello World";
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(SmartSchoolApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(SmartSchoolApplication.class, args);
+    }
 }
