@@ -1,17 +1,30 @@
 package org.orientalites.SmartSchool.data.models;
 
+import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.sql.Date;
+import java.sql.Time;
 
 @Data
-
+@NoArgsConstructor
+@Entity(name = "exam")
 public class Exam {
+    @jakarta.persistence.Id
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private int id;
     private String type;
     private String topic;
-    private String deadline;
-    private String start;
-    private String end;
+    @Temporal(TemporalType.DATE)
+    private Date deadline;
+    @Temporal(TemporalType.TIME)
+    private Time startTime;
+    @Temporal(TemporalType.TIME)
+    private Time endTime;
     private String date;
     private int maxMarks;
-    private int subject;
+    @ManyToOne
+    @JoinColumn(name = "subject_id",referencedColumnName = "id")
+    private Subject subject;
 }
