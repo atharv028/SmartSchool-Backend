@@ -13,8 +13,8 @@ public class Attendance {
     @jakarta.persistence.Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private int id;
-    @OneToOne(mappedBy = "student")
-    private int student;
+    @OneToOne()
+    private Student student;
     private String date;
     private boolean present;
 }

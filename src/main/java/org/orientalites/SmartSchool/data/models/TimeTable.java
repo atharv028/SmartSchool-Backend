@@ -15,9 +15,9 @@ public class TimeTable {
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne
-    @JoinColumn(name = "class_id", referencedColumnName = "id")
-    private int classId;
+    @OneToOne()
+    @JoinColumn(name = "class", referencedColumnName = "id")
+    private Class classId;
     private String date;
     private int subjectId;
     private int teacherId;

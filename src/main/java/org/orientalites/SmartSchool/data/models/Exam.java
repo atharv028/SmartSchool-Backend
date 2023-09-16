@@ -3,6 +3,7 @@ package org.orientalites.SmartSchool.data.models;
 import lombok.Data;
 
 @Data
+
 public class Exam {
     private int id;
     private String type;

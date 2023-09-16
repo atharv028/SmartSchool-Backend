@@ -13,20 +13,20 @@ import java.util.Set;
 public class Class {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    @OneToOne(mappedBy = "class")
     private int id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private int department;
+    @JoinColumn(name = "department", referencedColumnName = "id")
+    private Department department;
 
     private String semester;
     private char section;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "class", orphanRemoval = true)
-    @JoinColumn(name = "teacher_id", referencedColumnName = "id")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JoinColumn(name = "teachers", referencedColumnName = "id")
     private Set<Teacher> teachers;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "class", orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn(name = "subject_id", referencedColumnName = "id")
     private Set<Subject> subjects;
 }

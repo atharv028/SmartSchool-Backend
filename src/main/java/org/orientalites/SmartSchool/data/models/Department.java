@@ -1,8 +1,6 @@
 package org.orientalites.SmartSchool.data.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,11 +11,12 @@ public class Department {
 
     @jakarta.persistence.Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    @OneToMany(cascade = jakarta.persistence.CascadeType.ALL, fetch = jakarta.persistence.FetchType.LAZY, mappedBy = "department", orphanRemoval = true)
     private int id;
 
     private String collegeName;
     private String name;
     private String location;
-    private String collegeID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "college_id", referencedColumnName = "id")
+    private College college;
 }
