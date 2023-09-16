@@ -1,0 +1,22 @@
+server:
+  tomcat:
+    threads:
+      max: 400
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: AVNS_NwaAiSKcKMM41NqN8AG
+    url: jdbc:postgresql://smartschool-db-smartschool-8892.aivencloud.com:13443/defaultdb?sslmode=require
+    username: avnadmin
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+    level:
+        org.springframework.web: DEBUG
