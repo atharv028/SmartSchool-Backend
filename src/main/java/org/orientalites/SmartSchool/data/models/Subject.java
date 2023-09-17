@@ -1,5 +1,6 @@
 package org.orientalites.SmartSchool.data.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import lombok.Data;
@@ -14,5 +15,7 @@ public class Subject {
     private int id;
 
     private String name;
-    private String desc;
+
+    @Column(name = "description")
+    private String description;
 }
