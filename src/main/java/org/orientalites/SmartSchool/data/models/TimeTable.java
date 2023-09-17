@@ -1,7 +1,7 @@
 package org.orientalites.SmartSchool.data.models;
 
 import jakarta.persistence.*;
-import java.util.Date;
+import java.sql.Timestamp;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,8 +17,8 @@ public class TimeTable {
     @JoinColumn(name = "class", referencedColumnName = "id")
     private Class classId;
 
-    @Temporal(TemporalType.DATE)
-    private Date date;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Timestamp date;
 
     @OneToOne()
     @JoinColumn(name = "subject", referencedColumnName = "id")

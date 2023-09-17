@@ -25,6 +25,6 @@ public class Class {
     private Set<Teacher> teachers;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    @JoinColumn(name = "subject_id", referencedColumnName = "id")
+    @JoinColumn(name = "subjects", referencedColumnName = "id")
     private Set<Subject> subjects;
 }

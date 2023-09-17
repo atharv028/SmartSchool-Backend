@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-@Entity(name = "department")
+@Entity(name = "departments")
 public class Department {
 
     @jakarta.persistence.Id
@@ -17,6 +17,6 @@ public class Department {
     private String location;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "college_id", referencedColumnName = "id")
+    @JoinColumn(name = "collegeID", referencedColumnName = "id")
     private College college;
 }

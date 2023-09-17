@@ -1,7 +1,7 @@
 package org.orientalites.SmartSchool.data.models;
 
 import jakarta.persistence.*;
-import java.util.Date;
+import java.sql.Timestamp;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -21,8 +21,10 @@ public class Student {
     @JoinColumn(name = "class", referencedColumnName = "id")
     private Class classId;
 
-    @Temporal(TemporalType.DATE)
-    private Date dob;
+    private Boolean sex;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Timestamp dob;
 
     private String address;
     private String phone;

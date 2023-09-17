@@ -9,13 +9,13 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-@Entity(name = "parent")
+@Entity(name = "parents")
 public class Parent {
     @jakarta.persistence.Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private int id;
 
     @OneToOne
-    @JoinColumn(name = "student_id", referencedColumnName = "id")
+    @JoinColumn(name = "student", referencedColumnName = "id")
     private Student student;
 }
