@@ -6,9 +6,9 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    password: AVNS_NwaAiSKcKMM41NqN8AG
     url: jdbc:postgresql://smartschool-db-smartschool-8892.aivencloud.com:13443/defaultdb?sslmode=require
-    username: avnadmin
+    password: ${DB_PASSWORD}
+    username: ${DB_USERNAME}
   jpa:
     database: POSTGRESQL
     hibernate:
