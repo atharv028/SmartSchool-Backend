@@ -3,7 +3,7 @@ package org.orientalites.SmartSchool.controller;
 import org.orientalites.SmartSchool.data.models.JwtRequest;
 import org.orientalites.SmartSchool.data.models.JwtResponse;
 import org.orientalites.SmartSchool.data.service.StudentDetailService;
-import org.orientalites.SmartSchool.data.utils.JwtUtil;
+import org.orientalites.SmartSchool.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

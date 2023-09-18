@@ -1,5 +1,6 @@
 package org.orientalites.SmartSchool.data.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.sql.Timestamp;
 import lombok.Data;
@@ -19,8 +20,9 @@ public class Student {
     private String password;
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "class", referencedColumnName = "id")
+    @JsonIgnore
     private Class classId;
 
     private Boolean sex;

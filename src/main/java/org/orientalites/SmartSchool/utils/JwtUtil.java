@@ -1,4 +1,4 @@
-package org.orientalites.SmartSchool.data.utils;
+package org.orientalites.SmartSchool.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
