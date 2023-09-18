@@ -30,7 +30,7 @@ public class StudentController {
     }
 
     @GetMapping("/getStudentByID")
-    public Student getStudentByID(int id) {
+    public Student getStudentByID(String id) {
         if (repository.findById(id).isPresent()) return repository.findById(id).get();
         return null;
     }
@@ -44,4 +44,7 @@ public class StudentController {
     public void deleteStudent(@RequestBody Student newStudent) {
         repository.delete(newStudent);
     }
+
+    // signin and signup auth using email and password spring security
+
 }

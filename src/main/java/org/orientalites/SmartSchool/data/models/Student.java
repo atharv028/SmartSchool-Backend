@@ -10,10 +10,12 @@ import lombok.NoArgsConstructor;
 @Entity(name = "student")
 public class Student {
     @jakarta.persistence.Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "id", nullable = false, unique = true)
+    private String id;
 
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
+
     private String password;
     private String name;
 
