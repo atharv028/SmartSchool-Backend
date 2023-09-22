@@ -1,0 +1,12 @@
+apply plugin: "com.github.spotbugs"
+
+spotbugs {
+    ignoreFailures = false
+    showStackTraces = true
+    showProgress = true
+    visitors = [ 'FindSqlInjection', 'SwitchFallthrough' ]
+    reportsDir = file("$buildDir/reports/spotbugs")
+    projectName = name
+    release = version
+    maxHeapSize = '512m'
+}
